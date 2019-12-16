@@ -13093,7 +13093,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><ul>
+<h3 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h3><ol>
 <li>Background<ul>
 <li>Introduction</li>
 <li>Defintions</li>
@@ -13101,6 +13101,8 @@ div#notebook {
 <li>Context</li>
 </ul>
 </li>
+</ol>
+<ul>
 <li>Data Processing<ul>
 <li>Data Collection</li>
 <li>Creation of GDP Data</li>
@@ -13121,7 +13123,7 @@ div#notebook {
 </li>
 <li>Insight and Policy Design<ul>
 <li>Summary</li>
-<li>What We Found</li>
+<li>Insight</li>
 </ul>
 </li>
 </ul>
@@ -20134,7 +20136,7 @@ source from <a href="https://www.bloomberg.com/news/articles/2019-03-28/economis
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">richvsPoor</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Country Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Year&quot;</span><span class="p">])</span>
@@ -20173,10 +20175,6 @@ source from <a href="https://www.bloomberg.com/news/articles/2019-03-28/economis
         <span class="n">graphData</span> <span class="o">=</span> <span class="n">graphData</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Country Name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;High income&quot;</span><span class="p">:</span>
         <span class="n">graphData2</span> <span class="o">=</span> <span class="n">graphData2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># with pd.option_context(&#39;display.max_rows&#39;, None, &#39;display.max_columns&#39;, None):</span>
-<span class="c1">#     display(graphData)</span>
-<span class="c1">#     display(graphData2)</span>
 </pre></div>
 
     </div>
@@ -20465,7 +20463,6 @@ Countries will tend to converge in output per capita and in standard of living. 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">:(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">)})</span>
-<span class="c1"># reg = sns.regplot(x=&quot;Employment in agriculture (% of total employment) (modeled ILO estimate)&quot;, y=&quot;GDP per capita (current US$)&quot;, data=miscellaneousData, line_kws={&quot;color&quot;: &quot;red&quot;}, order=4, ci=30, scatter_kws={&quot;s&quot;: 80})</span>
 <span class="n">joint</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">jointplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Employment in agriculture (</span><span class="si">% o</span><span class="s2">f total employment) (modeled ILO estimate)&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;GDP per capita (current US$)&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">miscellaneousData</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">13</span><span class="p">)</span>
 </pre></div>
 
@@ -22634,13 +22631,14 @@ Thus, we can confirm that GDP per capita grows over time.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="5.1-What-We-Found">5.1 What We Found<a class="anchor-link" href="#5.1-What-We-Found">&#182;</a></h3>
+<h3 id="5.1-Insight">5.1 Insight<a class="anchor-link" href="#5.1-Insight">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>With this data we concluded some aspects of economics which we were already aware of and found out some information that suprised us. For example, there was very little correlation between GDP per capita and the percentage of GDP spent on education. But our predicitons about lower birth rates in more developed countries shown to be supported by the data we plotted. Visualizing economics through data science is an extremely important field, and the large amount of information organizations such as the World Bank and the IMF give solidifies that. With this information, economists can attempt to form more accurate models and predictions that could impact billions of people. Hopefully, this tutorial has allowed you to get a glimpse on the potential visualizing databanks such as these can have on our perceptions and decisions regarding important economic topics.</p>
 
 </div>
 </div>
